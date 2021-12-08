@@ -14,14 +14,6 @@ class Square:
         Returns:
             None
         """
-        if type(size) is not int:
-            raise TypeError("size must be an integer")
-        else:
-            if size < 0:
-                raise ValueError("size must be >= 0")
-            else:
-                self.__size = size
-
     def area(self):
         """Returns the value of Square Area"""
         return (self.__size) ** 2
