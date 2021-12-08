@@ -20,14 +20,20 @@ class Square:
         """Returns the value of Square Area"""
         return (self.__size) ** 2
 
-    @property
     def size(self):
-        """getter method"""
+        """getter method
+        Returns:
+            The size of the square
+        """
         return self.__size
 
-    @size.setter
     def size(self, value):
-        """setter method"""
+        """setter method
+        Args:
+            value (int): the size of a size of the square
+        Returns:
+            None
+        """
         if type(size) is not int:
             raise TypeError("size must be an integer")
         else:
