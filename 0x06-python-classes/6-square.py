@@ -63,9 +63,15 @@ class Square:
            any(map(lambda x: type(x) is not int or x < 0, value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            self.position = value
+            if value < 0:
+                raise ValueError("size must be >= 0")
+            else:
+                self.position = value
 
     def my_print(self):
+        """Prints in standard output
+          Square with character # at a position"
+        """
         if self.size == 0:
             print()
         else:
