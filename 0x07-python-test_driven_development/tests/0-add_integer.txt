@@ -1,0 +1,121 @@
+The ``0-add_integer`` module
+=========================
+
+Using ``0-add_integer``
+--------------------
+
+This is an example text file in reStructuredText format.
+
+First import ``add_integer`` from the ``0-add_integer`` module:
+
+     >>> add_integer =  __import__("0-add_integer").add_integer
+
+Checks for module docstring:
+       >>> m = __import__("0-add_integer").__doc__
+       >>> len(m) > 1
+       True
+
+Checks for function docstring:
+       >>> f = __import__("add_integer").my_function.__doc__
+       >>> len(f) > 1
+       True
+
+Checks for normal addition of positive integers only:
+       >>> add_integer(2, 5)
+       7
+
+Checks for positive with negative:
+       >>> add_integer(5, -3)
+       2
+
+Checks for negative with positive:
+       >>> add_integer(-2, 6)
+       4
+
+Checks for negative with negative:
+       >>> add_integer(-1, -5)
+       -6
+
+Checks for a single positive argument:
+       >>> add_integer(4))
+       102
+
+Checks for a single negative argument:
+       >>> add_integer(-3))
+       95
+
+Checks addition over multiple values:
+        >>> [add_integer(i, i ** 2) for i in range(1,6,2)]
+	[2, 12, 30]
+
+Checks float with int:
+        >>> add_integer(2.3, 7)
+	9
+
+Checks int with float:
+       >>> add_integer(5, 1.7)
+       6
+
+Checks float with float:
+       >>> add_integer(7.8, 5.9)
+       12
+
+Checks for passed NaN:
+        >>> add_integer(1, float('nan'))
+	Traceback (most recent call last):
+	...
+	ValueError: cannot convert float NaN to integer
+
+Checks for passed inf:
+        >>> add_integer(1, float('inf'))
+	Traceback (most recent call last):
+	...
+	OverflowError: cannot convert float infinity to integer
+
+Checks for long long integer:
+       >>> add_integer(99999999999999999999999999999999999999999999, 9999999999999999999999999999999)
+       Traceback (most recent call last):
+       ...
+       OverflowError: values are too large
+
+Checks for non-figure with figure:
+       >>> add_integer([3], 4)
+       Traceback (most recent call last):
+       ...
+       TypeError : a must be an integer
+
+Checks for number with non_number:
+       >>> add_integer(5, {"dict": "key"})
+       Traceback (most recent call last):
+       ...
+       TypeError : b must be an integer
+
+Checks for two non-numbers:
+       >>> add_integer((2,), "3")
+       Traceback (most recent call last):
+       ...
+       TypeError: a must be an integer
+
+Checking bool with number:
+	 >>> add_integer(True, 1)
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: a must be an integer
+
+Checking number with bool:
+	 >>> add_integer(0, False)
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: b must be an integer
+
+Checking no args:
+	 >>> add_integer()
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: add_integer() takes minimum of 1 from 2 arguments for 'a'
+
+Checking more than 2 args:
+	 >>> add_integer(1, 2, 3)
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: add_integer() takes 2 positional arguments but 3 were given
