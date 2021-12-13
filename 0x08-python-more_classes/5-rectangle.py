@@ -4,15 +4,11 @@
 
 class Rectangle:
     """Method to Represent a Rectangle"""
-#number_of_instances = 0
-#print_symbol = "#"
-
 
     def __init__(self, width=0, height=0):
         """ """
         self.width = width
         self.height = height
-        number_of_instances += 1
 
     @property
     def width(self):
@@ -68,8 +64,7 @@ class Rectangle:
         Returns: string representation to recreate object.
         """
         return "Rectangle({}, {})".format(self.width, self.height)
-    
+
     def __del__(self):
         """Rectangle is about to be deleted"""
         print("Bye rectangle...")
-        #number_of_instances -= 1
