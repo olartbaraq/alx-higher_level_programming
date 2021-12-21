@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-instance of a class check 
+instance of a class check
 """
 
 
