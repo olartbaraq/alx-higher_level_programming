@@ -15,9 +15,9 @@ class Square(Rectangle):
         self.__size = size
 
     def area(self):
-        """returns the area of the rectangle"""
+        """returns the area of the square"""
         return (self.__size) ** 2
 
     def __str__(self):
         """string representation of object"""
-        return "[Rectangle] {:d}/{:d}".format(self.__size, self.__size)
+        return "[Square] {:d}/{:d}".format(self.__size, self.__size)
