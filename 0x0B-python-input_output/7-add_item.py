@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """
 defines a script that adds all arguments to a Python list\
 , and then saves them to a file
