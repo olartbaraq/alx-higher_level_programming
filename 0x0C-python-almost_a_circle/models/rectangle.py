@@ -89,7 +89,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """ informal string representation of the rectangle class"""
-        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return f"[Rectangle] ({self.id}) {self.__x}/{self.__y} -\
+ {self.__width}/{self.__height}"
 
     def update(self, *args, **kwargs):
         """method that assigns an argument to each attribute"""
@@ -121,6 +122,6 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """method to return the deictionary representation of the class"""
-        new_dict = {"width":self.__width, "height":self.__height, "x":self.__x,\
-                    "y":self.__y, "id":self.id}
+        new_dict = {"width": self.__width, "height": self.__height,
+                    "x": self.__x, "y": self.__y, "id": self.id}
         return new_dict

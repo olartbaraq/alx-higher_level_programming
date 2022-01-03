@@ -53,7 +53,7 @@ class Base():
     @classmethod
     def load_from_file(cls):
         """returns a list of instances"""
-        filename = cls.__name__ +".json"
+        filename = cls.__name__ + ".json"
         ret = []
         if filename is None:
             return []
@@ -63,6 +63,6 @@ class Base():
                     ret = cls.from_json_string(file_object.read())
                     for i, e in enumerate(ret):
                         ret[i] = cls.create(**ret[i])
-            except:
+            except ValueError:
                 pass
             return 1
