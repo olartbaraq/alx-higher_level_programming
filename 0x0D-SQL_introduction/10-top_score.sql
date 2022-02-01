@@ -7,4 +7,4 @@
 
 
 
-SELECT score, name FROM second_table WHERE score = 14 ORDER BY score DESC;
+SELECT `score`, `name` FROM second_table WHERE `score` = 14 ORDER BY `score` DESC;
