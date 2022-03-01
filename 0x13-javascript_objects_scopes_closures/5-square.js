@@ -1,15 +1,16 @@
 #!/usr/bin/node
-class Rectangle {
+
+/*class Rectangle {
   constructor (w, h) {
     if (w > 0 && h > 0) {
-	this.width = w;
-	this.height = h;
+      this.width = w;
+      this.height = h;
     }
   }
 
   print () {
     for (let item = 0; item < this.height; item++) {
-	console.log('X'.repeat(this.width));
+      console.log('X'.repeat(this.width));
     }
   }
 
@@ -25,6 +26,8 @@ class Rectangle {
     this.height = 2 * this.height;
   }
 }
+*/
+const Rectangle = require('./4-rectangle.js');
 
 module.exports = class Square extends Rectangle {
   constructor (size) {
