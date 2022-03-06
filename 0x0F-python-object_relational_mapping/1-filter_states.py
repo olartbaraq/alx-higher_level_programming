@@ -11,11 +11,10 @@ if __name__ == "__main__":
 
     data_base = MySQLdb.connect(user=username, passwd=password, db=db_name)
     cur = data_base.cursor()
-    cur.execute("SELECT * FROM states "
-                "WHERE name LIKE 'N%' "
-                "ORDER BY id ASC")
+    cur.execute("""SELECT * FROM states ORDER BY states.id""")
     table = cur.fetchall()
     for row in table:
-        print(row)
+        if row[1].startswith("N"):
+            print(row)
     cur.close()
     db.close()
