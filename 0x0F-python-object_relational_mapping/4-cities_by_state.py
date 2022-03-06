@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-module that lists all cities from a database
-"""
+"""module that lists all cities from a database"""
 
 if __name__ == "__main__":
     import MySQLdb
@@ -15,9 +13,8 @@ if __name__ == "__main__":
     cur = mydb.cursor()
     text1 = "SELECT cities.id, cities.name, states.name FROM cities"
     text2 = "LEFT JOIN states ON cities.state_id=states.id ORDER BY cities.id"
-    txt_concat = txt1 + ' ' + txt2
-    cur = mydb.cursor()
-    cur.execute(txt_concat)
+    text_concat = text1 + ' ' + text2
+    cur.execute(text_concat)
 
     cities = cur.fetchall()
 
