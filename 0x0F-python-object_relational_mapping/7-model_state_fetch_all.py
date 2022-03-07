@@ -7,14 +7,13 @@ if __name__ == "__main__":
     from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
 
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database_name = sys.argv[3]
+    usr = sys.argv[1]
+    pswd = sys.argv[2]
+    db_name = sys.argv[3]
 
 # dialect+driver://username:password@host:port/database
-    connection_string = 'mysql+mysqldb://{}:{}@localhost:3306/{}'.
-    format(username, password, database_name)
-    engine = create_engine(connection_string)
+    c_str = 'mysql+mysqldb://{}:{}@localhost/{}'.format(usr, pswd, db_name)
+    engine = create_engine(c_str, pool_pre_ping=True)
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
