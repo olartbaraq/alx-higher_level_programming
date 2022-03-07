@@ -1,4 +1,4 @@
-#!/usr/bin/pyhton3
+#!/usr/bin/python3
 """State class definition"""
 
 from sqlalchemy.ext.declarative import declarative_base
