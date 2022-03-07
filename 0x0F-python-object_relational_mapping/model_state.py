@@ -2,9 +2,10 @@
 """State class definition"""
 
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, create_engine
+
 Base = declarative_base()
 
-from sqlalchemy import Column, Integer, String, create_engine
 
 class State(Base):
     """ Class State that inherities from Base class"""
