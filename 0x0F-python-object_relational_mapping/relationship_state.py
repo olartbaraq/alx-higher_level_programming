@@ -3,6 +3,8 @@
 
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, create_engine
+from sqlalchemy import relationship, backref
+
 
 Base = declarative_base()
 
@@ -10,6 +12,7 @@ Base = declarative_base()
 class State(Base):
     """ Class State that inherities from Base class"""
     __tablename__ = 'states'
+
     id = Column(Integer, primary_key=True, nullable=False,
                 unique=True, autoincrement=True)
     name = Column(String(128), nullable=False)
