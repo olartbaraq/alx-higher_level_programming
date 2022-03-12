@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """create a state and city"""
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import sys
     from sqlalchemy.orm import sessionmaker
     from sqlalchemy import create_engine
