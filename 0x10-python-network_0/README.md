@@ -1,10 +1,10 @@
 <header>
-hr
 <h3>Learning Objectives</h3>
 <p>At the end of this project, you are expected to be able to explain to anyone, without the help of Google:</p>
 
 <br>
 <h3>General</h3>
+<hr>
 <ul>
 <li>What a URL is</li>
 <li>What HTTP is</li>
@@ -23,3 +23,5 @@ hr
 <li>What an HTTP Cookie is</li>
 <li>How to make a request with cURL</li>
 <li>What happens when you type google.com in your browser (Application level)</li>
+</ul>
+</header>
