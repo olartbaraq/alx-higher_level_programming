@@ -22,7 +22,7 @@ function callback (error, response, body) {
       const characters = results.characters;
       // console.log(characters);
       for (let j = 0; j < characters.length; j++) {
-        if (characters[j] === 'https://swapi-api.hbtn.io/api/people/18/') {
+        if ((characters[j]).includes('18')) {
           count += 1;
         }
       }
